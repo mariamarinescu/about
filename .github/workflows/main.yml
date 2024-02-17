@@ -1,0 +1,9 @@
+deploy:
+    name: Deploy to Cloudflare Pages
+    runs-on: ubuntu-latest
+    steps:
+        - name: Deploy to Cloudflare Pages
+          uses: cloudflare/cloudflare-pages-action@1.5.0
+          with:
+              apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+              buildCommand: npm run build
